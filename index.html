@@ -106,6 +106,59 @@
       </section>
 
       <section class="view" id="video">
+       
+<div class="panel" style="margin-bottom:18px">
+  <label for="videoEngine">Motor de generación de vídeo</label>
+  <select id="videoEngine">
+    <option value="wan2gp" selected>Wan2GP — Motor principal</option>
+    <option value="comfyui" disabled>ComfyUI — Próximamente</option>
+    <option value="external" disabled>Otros motores — Próximamente</option>
+  </select>
+
+  <div style="margin-top:16px">
+    <label for="wan2gpUrl">Dirección del conector Wan2GP</label>
+    <input
+      id="wan2gpUrl"
+      type="url"
+      value="http://127.0.0.1:7866"
+      placeholder="http://127.0.0.1:7866"
+    >
+
+    <label for="wan2gpToken" style="margin-top:12px">
+      Token de seguridad
+    </label>
+    <input
+      id="wan2gpToken"
+      type="password"
+      placeholder="Pega aquí el token del conector"
+      autocomplete="off"
+    >
+
+    <button
+      class="btn secondary full"
+      id="connectWan2GP"
+      type="button"
+      style="margin-top:14px"
+    >
+      Conectar con Wan2GP
+    </button>
+
+    <p id="wan2gpStatus" style="font-size:12px;color:#98a4b9">
+      Desconectado · Esperando conexión local
+    </p>
+
+    <label for="wan2gpModel">Modelo Wan2GP</label>
+    <select id="wan2gpModel" disabled>
+      <option value="">Conecta Wan2GP para cargar los modelos</option>
+    </select>
+
+    <small style="display:block;color:#98a4b9;font-size:11px;margin-top:8px">
+      La generación se ejecutará en el equipo del usuario.
+      El token no debe compartirse ni publicarse.
+    </small>
+  </div>
+</div>
+
         <div class="intro"><span class="eyebrow">VÍDEO · PROMPT BUILDER</span><h2>Video Studio</h2><p>Prepara prompts para flujos de texto a vídeo o imagen a vídeo.</p></div>
        
 <div class="panel" style="margin-bottom:18px">
