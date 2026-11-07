@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Gangry Fusion AI — espacio creativo independiente para prompts, storyboards y proyectos de IA.">
+  <meta name="application-name" content="Gangry Fusion AI">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2215%22 fill=%22%230d111c%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-size=%2227%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22bold%22 fill=%22%23a18aff%22%3EGF%3C/text%3E%3C/svg%3E">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{color-scheme:dark;--bg:#090b12;--panel:#111520;--panel2:#171d2a;--line:#252d3d;--muted:#8e99ad;--text:#f4f6fb;--purple:#9b83ff;--blue:#6ca8ff;--green:#64d8b0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.app-shell{display:flex;min-height:100vh}.sidebar{width:248px;background:#0d111a;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:8px;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 32px}.brand-mark,.avatar{background:linear-gradient(135deg,#9c83ff,#4f8df8);border:0;color:white;font-family:'Space Grotesk';font-weight:700}.brand-mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-size:15px;letter-spacing:-1px;box-shadow:0 7px 24px #7664f044;outline:1px solid #c4b8ff55}.brand strong{display:block;font:700 14px 'Space Grotesk';letter-spacing:1.4px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:3px}.nav{border:0;background:transparent;color:#aab4c7;text-align:left;padding:13px 14px;border-radius:10px;font-size:13px;display:flex;gap:13px;align-items:center}.nav span{font-size:18px;width:20px;text-align:center}.nav:hover,.nav.active{background:#1a2030;color:white}.nav.active{box-shadow:inset 2px 0 #9b83ff}.sidebar-bottom{margin-top:auto;padding:16px 10px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.sidebar-bottom small{display:block;margin-top:14px}.status{display:flex;gap:8px;align-items:center}.status i{width:7px;height:7px;background:#5cdbad;border-radius:50%;box-shadow:0 0 12px #5cdbad}.main{max-width:1500px;width:100%;margin:auto;padding:28px clamp(18px,4vw,58px) 18px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.eyebrow{color:#9b83ff;font-size:10px;letter-spacing:1.8px;font-weight:700}.topbar h1{font:600 22px 'Space Grotesk';margin:4px 0 0}.top-actions{display:flex;gap:10px;align-items:center}.avatar{width:36px;height:36px;border-radius:50%}.mobile-menu{display:none;background:var(--panel);border:1px solid var(--line);color:white;border-radius:9px;padding:8px}.btn{border:1px solid var(--line);padding:11px 16px;border-radius:9px;color:white;background:#1a2030;font-weight:600;font-size:12px}.btn.primary{background:linear-gradient(100deg,#8669ed,#547ee8);border:0;box-shadow:0 8px 24px #6c5be533}.btn.secondary{background:#20283a}.btn.ghost{background:transparent;color:#b7c0d0}.btn.full{width:100%;margin-top:6px}.btn:hover,.tool-card:hover{filter:brightness(1.13);transform:translateY(-2px);border-color:#7669c766;box-shadow:0 12px 30px #0004}.view{display:none}.view.active{display:block}.hero{min-height:310px;box-shadow:0 18px 60px #0003,inset 0 1px #ffffff0b;border:1px solid #2a3043;border-radius:18px;background:radial-gradient(ellipse at 80% 20%,#51418a55,transparent 38%),linear-gradient(120deg,#171b2b,#101522 70%);padding:clamp(24px,5vw,54px);display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.hero-copy{max-width:540px;position:relative;z-index:1}.hero h2{font:600 clamp(32px,4.5vw,53px)/1.08 'Space Grotesk';letter-spacing:-2px;margin:16px 0}.hero h2 em{font-style:normal;color:#a795ff}.hero p,.intro p{color:#a8b2c5;line-height:1.7;font-size:14px;max-width:480px;margin-bottom:23px}.hero-art{width:40%;min-width:230px;height:240px;position:relative;display:grid;place-items:center}.orb{position:absolute;border-radius:50%;filter:blur(2px)}.orb-a{width:200px;height:200px;background:radial-gradient(circle at 35% 30%,#b1a1ff,#6453bd 45%,#222b50 75%);opacity:.65}.orb-b{width:130px;height:130px;border:1px solid #b9acff88;transform:translate(60px,35px)}.art-window{position:relative;width:220px;height:145px;border:1px solid #ffffff33;border-radius:12px;background:#111827cc;backdrop-filter:blur(12px);padding:13px;transform:rotate(-7deg);box-shadow:0 25px 60px #0008}.art-bar{display:flex;gap:5px;margin-bottom:12px}.art-bar i{width:5px;height:5px;border-radius:50%;background:#8794b5}.art-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;height:78px}.art-grid div{border-radius:6px;background:linear-gradient(145deg,#8d78e9,#263f6d)}.art-grid div:nth-child(2){background:linear-gradient(145deg,#e8a8a0,#61466f)}.art-grid div:nth-child(3){background:linear-gradient(145deg,#67c9ae,#31516b)}.art-window>span{font-size:8px;letter-spacing:2px;color:#a9b3c9;display:block;margin-top:8px}.section-head{display:flex;align-items:end;justify-content:space-between;margin:34px 0 15px}.section-head h3{font:600 20px 'Space Grotesk';margin:5px 0 0}.tool-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.tool-card{position:relative;overflow:hidden;text-align:left;min-height:145px;border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:16px;color:white;display:flex;flex-direction:column;align-items:flex-start;gap:9px;transition:.18s}.tool-card strong{font:600 14px 'Space Grotesk'}.tool-card small{color:var(--muted);font-size:11px;line-height:1.4}.tool-card>b{position:absolute;right:15px;top:17px;color:#8590a8}.tool-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:19px}.purple{background:#6f55b833;color:#b5a5ff}.blue{background:#477cc933;color:#85baff}.orange{background:#b8793433;color:#ffc17d}.green{background:#3a9d7833;color:#78e0bd}.pink{background:#a04d8b33;color:#f2a4d6}.counter,.tag{font-size:10px;color:#99a5ba;background:#20283a;padding:6px 9px;border-radius:30px}.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.empty{grid-column:1/-1;border:1px dashed #30394d;border-radius:13px;padding:30px;text-align:center;color:var(--muted);display:flex;align-items:center;flex-direction:column;gap:7px}.empty span{font-size:27px}.empty strong{color:#dce2ee;font-size:13px}.empty small{font-size:11px}.intro{margin:8px 0 23px}.intro h2{font:600 34px 'Space Grotesk';margin:7px 0}.intro p{margin:0}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}.panel label{display:block;font-size:11px;color:#bdc7d8;font-weight:600;margin:0 0 8px}.panel textarea,.panel input,.panel select{width:100%;border:1px solid #2c3548;background:#0c111b;color:#f1f4fa;border-radius:8px;padding:11px 12px;margin-bottom:15px;outline:none;font-size:12px}.panel textarea{resize:vertical;line-height:1.6}.panel textarea:focus,.panel input:focus,.panel select:focus{border-color:#8d78e9}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field-row>div{min-width:0}.output-panel{display:flex;flex-direction:column;min-height:390px}.panel-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:13px}.output{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1019;border:1px solid #242c3b;border-radius:9px;padding:15px;color:#d4dcef;font:12px/1.75 'DM Sans';flex:1;min-height:210px;margin:0 0 13px}.button-row{display:flex;gap:9px;flex-wrap:wrap}.scene-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}.scene{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}.scene b{font:600 12px 'Space Grotesk';color:#b4a4ff}.scene p{font-size:12px;color:#c6cede;line-height:1.6}.scene small{color:var(--muted);font-size:10px}.scene-grid+.button-row{margin-bottom:20px}footer{margin-top:45px;padding:18px 0;border-top:1px solid var(--line);font-size:9px;letter-spacing:1.4px;color:#737f95}footer span{color:#9b83ff;margin:0 5px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#e9e6ff;color:#171329;padding:11px 16px;border-radius:9px;font-size:12px;font-weight:700;transition:.2s;pointer-events:none;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:1050px){.tool-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.sidebar{position:fixed;z-index:10;inset:0 auto 0 0;transform:translateX(-105%);transition:.2s;box-shadow:20px 0 60px #0008}.sidebar.open{transform:translateX(0)}.main{padding:18px 14px}.topbar{gap:10px}.mobile-menu{display:block}.top-actions .ghost{display:none}.topbar{justify-content:flex-start}.top-actions{margin-left:auto}.hero{min-height:290px}.hero-art{position:absolute;right:-55px;bottom:-35px;opacity:.35}.hero-copy{max-width:100%}.tool-grid{grid-template-columns:repeat(2,1fr)}.tool-card{min-height:135px}.workspace{grid-template-columns:1fr}.output-panel{min-height:300px}.projects{grid-template-columns:1fr}.scene-grid{grid-template-columns:1fr}.intro h2{font-size:29px}}@media(max-width:390px){.tool-grid{grid-template-columns:1fr 1fr}.tool-card{padding:12px}.hero h2{font-size:32px}.field-row{grid-template-columns:1fr}}
+
+/* Gangry Fusion AI brand polish · MVP 0.8 */
+::selection{background:#8068e8;color:#fff}.brand-mark{background:linear-gradient(135deg,#a18aff 0%,#6d72ee 52%,#4c9df0 100%)}.eyebrow{ text-shadow:0 0 18px #9b83ff33}.panel,.scene,.tool-card{box-shadow:0 8px 26px #0002}.btn.primary{background:linear-gradient(105deg,#9275ff 0%,#647df2 55%,#4c9de9 100%)}.status i{animation:gf-pulse 2.4s ease-in-out infinite}@keyframes gf-pulse{50%{box-shadow:0 0 18px #5cdbad;opacity:.65}}
+
+/* Logo visible y legible en pantallas pequeñas */
+.brand-mark{width:46px;height:46px;flex:0 0 46px;padding:5px}.brand-mark svg{width:100%;height:100%;display:block}.brand strong{letter-spacing:1px}.brand{gap:12px}
+
+/* Dashboard brand identity */
+.hero-brand{display:flex;align-items:center;gap:16px;margin:0 0 24px}
+.hero-brand-mark{width:70px;height:70px;flex:0 0 70px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(135deg,#a18aff 0%,#587ff0 100%);color:#fff;font:700 25px 'Space Grotesk',sans-serif;letter-spacing:-2px;box-shadow:0 12px 34px #7866ed55,inset 0 1px #ffffff66;border:1px solid #c9beff88}
+.hero-brand-name{display:flex;flex-direction:column;gap:0;line-height:.98;font-family:'Space Grotesk',sans-serif;letter-spacing:1.2px}
+.hero-brand-name span{font-size:clamp(22px,3.2vw,36px);font-weight:700;color:#f5f4ff}
+.hero-brand-name strong{font-size:clamp(25px,3.8vw,43px);font-weight:700;color:#a996ff;letter-spacing:.3px}
+.hero-brand-name em{font-style:normal;color:#78b5ff}
+@media(max-width:760px){.hero-brand{gap:12px;margin-bottom:20px}.hero-brand-mark{width:58px;height:58px;flex-basis:58px;border-radius:16px;font-size:21px}.hero-brand-name span{font-size:25px}.hero-brand-name strong{font-size:29px}.hero{padding:24px 20px;min-height:340px}}
+
+/* Identidad visual premium Gangry Fusion AI · v0.6 */
+.brand-hero-wrap{overflow:hidden;border:1px solid #39315f;border-radius:20px;background:#080b18;box-shadow:0 18px 55px #120b35aa,0 0 32px #7655ff22;margin-bottom:30px}
+.brand-hero-image{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.brand-hero-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 18px;background:linear-gradient(90deg,#111328,#17112c 55%,#0d1b30);color:#c9c5ee;font-size:12px;letter-spacing:.5px}
+.brand-mark{position:relative;overflow:hidden;background:radial-gradient(circle at 35% 25%,#fff7c9 0 4%,#ffcf61 5% 13%,transparent 14%),linear-gradient(145deg,#f2a5ff 0%,#8958ff 45%,#1b9ff4 100%);border:1px solid #e3caff;box-shadow:0 0 20px #8d5bff88,inset 0 0 10px #ffffff66}
+.brand-mark svg{filter:drop-shadow(0 2px 3px #140a36)}
+@media(max-width:600px){.brand-hero-wrap{border-radius:14px;margin-bottom:24px}.brand-hero-image{aspect-ratio:4/3;object-fit:cover;object-position:center}.brand-hero-actions{padding:11px 12px;font-size:10px}.brand-hero-actions .btn{padding:9px 11px;font-size:10px}}
+
+</style>
+  <title>Gangry Fusion AI</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-label="Gangry Fusion AI logo"><svg viewBox="0 0 128 128" role="img" aria-hidden="true"><defs><linearGradient id="gfLogo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe38a"/><stop offset=".38" stop-color="#d88cff"/><stop offset=".72" stop-color="#7c69ff"/><stop offset="1" stop-color="#39d7ff"/></linearGradient></defs><circle cx="64" cy="68" r="48" fill="#17112f" stroke="url(#gfLogo)" stroke-width="5"/><ellipse cx="64" cy="68" rx="58" ry="22" transform="rotate(-28 64 68)" fill="none" stroke="#56d9ff" stroke-width="4"/><path d="M36 34l8-17 18 13 18-13 9 17-5 10H41z" fill="url(#gfLogo)" stroke="#fff0c2" stroke-width="2"/><text x="36" y="89" fill="#fff" font-family="Arial,sans-serif" font-size="47" font-weight="900">G</text><text x="77" y="89" fill="#8eeaff" font-family="Arial,sans-serif" font-size="47" font-weight="900">F</text><circle cx="108" cy="38" r="6" fill="#ffe38a"/></svg></div>
+        <div><strong>GANGRY FUSION AI</strong><small>AI CREATIVE STUDIO</small></div>
+      </div>
+      <button class="nav active" data-view="dashboard"><span>⌂</span> Panel principal</button>
+      <button class="nav" data-view="image"><span>▧</span> Image Studio</button>
+      <button class="nav" data-view="video"><span>▶</span> Video Studio</button>
+      <button class="nav" data-view="storyboard"><span>▤</span> Storyboard AI</button>
+      <button class="nav" data-view="character"><span>♙</span> Character Studio</button>
+      <button class="nav" data-view="ugc"><span>◉</span> UGC Studio</button>
+      <div class="sidebar-bottom">
+        <div class="status"><i></i><span>Modo independiente</span></div>
+        <small>Versión 0.7 · Estudio creativo</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Abrir menú">☰</button>
+        <div><span class="eyebrow">TU ESPACIO CREATIVO</span><h1 id="pageTitle">Panel principal</h1></div>
+        <div class="top-actions">
+          <button class="btn ghost" id="exportBtn">Exportar proyectos</button>
+          <button class="avatar" title="Gangry Fusion AI">GF</button>
+        </div>
+      </header>
+
+      <section class="view active" id="dashboard">
+        <div class="brand-hero-wrap">
+          <img class="brand-hero-image" src="./assets/gangry-fusion-ai-banner.png" alt="Gangry Fusion AI: todas tus AI en una sola" />
+          <div class="brand-hero-actions"><span>Tu centro creativo de IA</span><button class="btn primary" data-go="video">Crear un proyecto <b>→</b></button></div>
+        </div>
+
+        <div class="section-head"><div><span class="eyebrow">HERRAMIENTAS</span><h3>¿Qué quieres crear hoy?</h3></div></div>
+        <div class="tool-grid">
+          <button class="tool-card" data-go="image"><span class="tool-icon purple">▧</span><strong>Image Studio</strong><small>Diseña prompts para imágenes</small><b>↗</b></button>
+          <button class="tool-card" data-go="video"><span class="tool-icon blue">▶</span><strong>Video Studio</strong><small>Prepara conceptos de vídeo</small><b>↗</b></button>
+          <button class="tool-card" data-go="storyboard"><span class="tool-icon orange">▤</span><strong>Storyboard AI</strong><small>Divide una historia en escenas</small><b>↗</b></button>
+          <button class="tool-card" data-go="character"><span class="tool-icon green">♙</span><strong>Character Studio</strong><small>Define personajes consistentes</small><b>↗</b></button>
+          <button class="tool-card" data-go="ugc"><span class="tool-icon pink">◉</span><strong>UGC Studio</strong><small>Prepara anuncios y guiones</small><b>↗</b></button>
+        </div>
+        <div class="section-head"><div><span class="eyebrow">BIBLIOTECA</span><h3>Mis proyectos</h3></div><span class="counter" id="projectCount">0 proyectos</span></div>
+        <div class="projects" id="projectList"><div class="empty"><span>▱</span><strong>Aún no tienes proyectos</strong><small>Guarda tu primer prompt para verlo aquí.</small></div></div>
+      </section>
+
+      <section class="view" id="image">
+        <div class="intro"><span class="eyebrow">IMAGEN · PROMPT BUILDER</span><h2>Image Studio</h2><p>Construye instrucciones detalladas para modelos de imagen abiertos.</p></div>
+        <div class="workspace">
+          <div class="panel">
+            <label>¿Qué quieres crear?</label><textarea id="imageSubject" rows="3" placeholder="Ej. Una modelo caminando por una calle de Santo Domingo al atardecer..."></textarea>
+            <div class="field-row"><div><label>Estilo visual</label><select id="imageStyle"><option>Cinematográfico realista</option><option>Fotografía editorial</option><option>3D animación familiar</option><option>Anime detallado</option><option>Producto comercial</option><option>Documental natural</option></select></div><div><label>Formato</label><select id="imageRatio"><option>9:16 vertical</option><option>16:9 horizontal</option><option>1:1 cuadrado</option><option>4:5 retrato</option></select></div></div>
+            <label>Detalles adicionales</label><textarea id="imageDetails" rows="3" placeholder="Iluminación, cámara, ambiente, vestuario, composición..."></textarea>
+            <button class="btn primary full" id="buildImage">Construir prompt</button>
+          </div>
+          <div class="panel output-panel"><div class="panel-title"><strong>Prompt resultante</strong><span class="tag">LISTO PARA COPIAR</span></div><pre id="imageOutput" class="output">Tu prompt aparecerá aquí.</pre><div class="button-row"><button class="btn secondary" data-copy="imageOutput">Copiar prompt</button><button class="btn ghost" data-save="imageOutput">Guardar proyecto</button></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="video">
+        <div class="intro"><span class="eyebrow">VÍDEO · PROMPT BUILDER</span><h2>Video Studio</h2><p>Prepara prompts para flujos de texto a vídeo o imagen a vídeo.</p></div>
+        <div class="workspace">
+          <div class="panel">
+            <label>Describe la escena y la acción</label><textarea id="videoSubject" rows="4" placeholder="Ej. Una mujer abre una caja de chocolate, sonríe y prueba una pieza..."></textarea>
+            <div class="field-row"><div><label>Tipo de generación</label><select id="videoType"><option>Texto a vídeo</option><option>Imagen a vídeo</option><option>Vídeo de referencia</option></select></div><div><label>Relación de aspecto</label><select id="videoRatio"><option>9:16 vertical</option><option>16:9 horizontal</option><option>1:1 cuadrado</option></select></div></div>
+            <div class="field-row"><div><label>Duración objetivo</label><select id="videoDuration"><option>5 segundos</option><option>8 segundos</option><option>10 segundos</option><option>15 segundos</option></select></div><div><label>Movimiento de cámara</label><select id="cameraMove"><option>Movimiento suave cinematográfico</option><option>Cámara fija</option><option>Travelling de acercamiento</option><option>Seguimiento lateral</option><option>Cámara en mano natural</option><option>Órbita alrededor del sujeto</option></select></div></div>
+            <label>Continuidad y detalles</label><textarea id="videoDetails" rows="3" placeholder="Mantener rostro, ropa, producto, escenario y luz consistentes..."></textarea>
+            <button class="btn primary full" id="buildVideo">Construir prompt</button>
+          </div>
+          <div class="panel output-panel"><div class="panel-title"><strong>Prompt resultante</strong><span class="tag">LISTO PARA COPIAR</span></div><pre id="videoOutput" class="output">Tu prompt aparecerá aquí.</pre><div class="button-row"><button class="btn secondary" data-copy="videoOutput">Copiar prompt</button><button class="btn ghost" data-save="videoOutput">Guardar proyecto</button></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="storyboard">
+        <div class="intro"><span class="eyebrow">NARRATIVA · PREPRODUCCIÓN</span><h2>Storyboard AI</h2><p>Convierte una idea en una secuencia de escenas lista para producir.</p></div>
+        <div class="panel">
+          <label>Idea o historia completa</label><textarea id="storyIdea" rows="4" placeholder="Escribe la historia desde el principio hasta el final..."></textarea>
+          <div class="field-row"><div><label>Número de escenas</label><select id="sceneCount"><option>4</option><option selected>6</option><option>8</option><option>10</option></select></div><div><label>Estilo</label><select id="storyStyle"><option>Cinematográfico realista</option><option>Publicidad UGC</option><option>Animación 3D</option><option>Documental</option><option>Suspenso</option></select></div></div>
+          <button class="btn primary" id="buildStory">Crear storyboard</button>
+        </div>
+        <div id="storyOutput" class="scene-grid"></div>
+        <div class="button-row" id="storyActions" hidden><button class="btn secondary" id="copyStory">Copiar storyboard</button><button class="btn ghost" id="saveStory">Guardar proyecto</button></div>
+      </section>
+
+      <section class="view" id="character">
+        <div class="intro"><span class="eyebrow">IDENTIDAD VISUAL</span><h2>Character Studio</h2><p>Crea una ficha maestra para mantener la descripción del personaje estable entre escenas.</p></div>
+        <div class="workspace">
+          <div class="panel">
+            <label>Nombre del personaje</label><input id="charName" placeholder="Ej. Luna">
+            <label>Rostro y rasgos físicos</label><textarea id="charFace" rows="3" placeholder="Forma del rostro, ojos, piel, cabello, rasgos distintivos..."></textarea>
+            <label>Vestuario y accesorios</label><textarea id="charClothes" rows="3" placeholder="Prendas, colores, calzado y accesorios..."></textarea>
+            <label>Personalidad y estilo</label><textarea id="charPersonality" rows="2" placeholder="Personalidad, edad aparente, lenguaje corporal..."></textarea>
+            <label>Reglas que nunca deben cambiar</label><textarea id="charRules" rows="3" placeholder="No cambiar rostro, peinado, proporciones, ropa ni paleta de colores..."></textarea>
+            <button class="btn primary full" id="buildCharacter">Crear ficha maestra</button>
+          </div>
+          <div class="panel output-panel"><div class="panel-title"><strong>Ficha maestra</strong><span class="tag">REFERENCIA</span></div><pre id="characterOutput" class="output">Completa los datos del personaje.</pre><div class="button-row"><button class="btn secondary" data-copy="characterOutput">Copiar ficha</button><button class="btn ghost" data-save="characterOutput">Guardar proyecto</button></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="ugc">
+        <div class="intro"><span class="eyebrow">MARKETING · CONTENIDO CORTO</span><h2>UGC Studio</h2><p>Organiza un anuncio vertical con gancho, demostración y llamada a la acción.</p></div>
+        <div class="workspace">
+          <div class="panel">
+            <label>Producto o servicio</label><input id="ugcProduct" placeholder="Ej. Chocolate caliente artesanal">
+            <label>Cliente ideal</label><input id="ugcAudience" placeholder="Ej. Personas que buscan una bebida reconfortante">
+            <label>Beneficio principal</label><textarea id="ugcBenefit" rows="2" placeholder="¿Qué problema resuelve o qué lo hace especial?"></textarea>
+            <div class="field-row"><div><label>Duración</label><select id="ugcDuration"><option>15 segundos</option><option selected>30 segundos</option><option>45 segundos</option></select></div><div><label>Tono</label><select id="ugcTone"><option>Natural y cercano</option><option>Emocional</option><option>Enérgico y directo</option><option>Elegante y premium</option></select></div></div>
+            <button class="btn primary full" id="buildUgc">Crear guion UGC</button>
+          </div>
+          <div class="panel output-panel"><div class="panel-title"><strong>Guion publicitario</strong><span class="tag">REELS / SHORTS</span></div><pre id="ugcOutput" class="output">Tu guion aparecerá aquí.</pre><div class="button-row"><button class="btn secondary" data-copy="ugcOutput">Copiar guion</button><button class="btn ghost" data-save="ugcOutput">Guardar proyecto</button></div></div>
+        </div>
+      </section>
+      <footer>GANGRY FUSION AI STUDIO <span>·</span> MVP 0.8 <span>·</span> Tus proyectos se guardan en este dispositivo.</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+const $=id=>document.getElementById(id);
+const views=[...document.querySelectorAll('.view')];
+const titles={dashboard:'Panel principal',image:'Image Studio',video:'Video Studio',storyboard:'Storyboard AI',character:'Character Studio',ugc:'UGC Studio'};
+function go(id){views.forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.view===id));$('pageTitle').textContent=titles[id]||'Gangry Fusion AI';$('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+$('menuBtn').addEventListener('click',()=>$('sidebar').classList.toggle('open'));
+let toastTimer;function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2100)}
+function val(id){return $(id).value.trim()}
+function put(id,text){$(id).textContent=text}
+function copyText(text){if(!text||text.startsWith('Tu prompt')||text.startsWith('Completa'))return toast('Primero crea el contenido.');navigator.clipboard?.writeText(text).then(()=>toast('Copiado al portapapeles')).catch(()=>toast('No se pudo copiar automáticamente.'))}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyText($(b.dataset.copy).textContent)));
+const getProjects=()=>JSON.parse(localStorage.getItem('gangry_fusion_projects')||'[]');
+function saveProject(title,content,type){if(!content||content==='Tu prompt aparecerá aquí.'||content==='Completa los datos del personaje.')return toast('Primero crea el contenido.');const p=getProjects();p.unshift({id:Date.now(),title,content,type,date:new Date().toLocaleString('es-DO')});localStorage.setItem('gangry_fusion_projects',JSON.stringify(p));renderProjects();toast('Proyecto guardado en este dispositivo.')}
+document.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click',()=>saveProject(titles[document.querySelector('.view.active')?.id]||'Proyecto',$(b.dataset.save).textContent,document.querySelector('.view.active')?.id||'general')));
+function renderProjects(){const p=getProjects();$('projectCount').textContent=`${p.length} proyecto${p.length===1?'':'s'}`;const host=$('projectList');if(!p.length){host.innerHTML='<div class="empty"><span>▱</span><strong>Aún no tienes proyectos</strong><small>Guarda tu primer prompt para verlo aquí.</small></div>';return;}host.innerHTML=p.slice(0,9).map(x=>`<article class="scene"><b>${escapeHtml(x.title)}</b><p>${escapeHtml(x.content.slice(0,180))}${x.content.length>180?'…':''}</p><small>${escapeHtml(x.date)} · ${escapeHtml(x.type)}</small><div style="margin-top:12px"><button class="btn secondary" data-project-copy="${x.id}">Copiar</button> <button class="btn ghost" data-project-delete="${x.id}">Eliminar</button></div></article>`).join('');host.querySelectorAll('[data-project-copy]').forEach(b=>b.onclick=()=>copyText(getProjects().find(x=>x.id==b.dataset.projectCopy)?.content||''));host.querySelectorAll('[data-project-delete]').forEach(b=>b.onclick=()=>{localStorage.setItem('gangry_fusion_projects',JSON.stringify(getProjects().filter(x=>x.id!=b.dataset.projectDelete)));renderProjects();toast('Proyecto eliminado.')})}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('buildImage').onclick=()=>{const s=val('imageSubject');if(!s)return toast('Describe primero la imagen.');put('imageOutput',`${s}\n\nEstilo visual: ${val('imageStyle')}.\nFormato: ${val('imageRatio')}.\nDetalles: ${val('imageDetails')||'Composición limpia, sujeto bien definido y acabado profesional.'}\n\nCalidad: alto nivel de detalle, iluminación coherente, texturas naturales, composición cuidada, enfoque preciso.\nEvitar: anatomía incorrecta, extremidades duplicadas, texto ilegible, artefactos, deformaciones y elementos inconsistentes.`);toast('Prompt de imagen creado.')};
+$('buildVideo').onclick=()=>{const s=val('videoSubject');if(!s)return toast('Describe primero la escena.');put('videoOutput',`${val('videoType')}: ${s}\n\nDuración objetivo: ${val('videoDuration')}.\nFormato: ${val('videoRatio')}.\nCámara: ${val('cameraMove')}.\nContinuidad: ${val('videoDetails')||'Mantener consistentes los sujetos, vestuario, escenario, iluminación y dirección de movimiento.'}\n\nDirección cinematográfica: movimiento natural y físicamente plausible, acción clara, composición legible, iluminación consistente, sin cambios bruscos de identidad ni objetos que aparezcan o desaparezcan.\nAudio: ambiente y sonidos coherentes con la escena, si el modelo lo permite.`);toast('Prompt de vídeo creado.')};
+$('buildCharacter').onclick=()=>{if(!val('charName')||!val('charFace'))return toast('Añade nombre y rasgos físicos.');put('characterOutput',`FICHA MAESTRA DE PERSONAJE: ${val('charName')}\n\nROSTRO Y RASGOS:\n${val('charFace')}\n\nVESTUARIO Y ACCESORIOS:\n${val('charClothes')}\n\nPERSONALIDAD:\n${val('charPersonality')}\n\nREGLAS DE CONTINUIDAD:\n${val('charRules')||'Mantener exactamente los mismos rasgos faciales, cabello, proporciones corporales, vestuario, accesorios y paleta de colores en todas las escenas.'}\n\nINSTRUCCIÓN DE USO:\nUsar esta ficha como referencia fija en cada prompt. No reinterpretar ni rediseñar al personaje entre tomas.`);toast('Ficha maestra creada.')};
+$('buildUgc').onclick=()=>{if(!val('ugcProduct')||!val('ugcBenefit'))return toast('Añade producto y beneficio principal.');const d=val('ugcDuration'),tone=val('ugcTone'),p=val('ugcProduct'),a=val('ugcAudience'),b=val('ugcBenefit');const scripts={'15 segundos':[['0–3 s · GANCHO',`“¿Todavía no conoces ${p}? Esto te puede interesar.”`],['3–10 s · DEMOSTRACIÓN',`Mostrar el producto en uso. Comunicar el beneficio: ${b}.`],['10–15 s · CTA','“Pruébalo y descubre la diferencia. Escríbenos para más información.”']], '30 segundos':[['0–3 s · GANCHO',`“Tengo que enseñarte algo sobre ${p}.”`],['3–10 s · PROBLEMA',`Conectar con una necesidad de ${a||'la audiencia'} sin exagerar resultados.`],['10–22 s · DEMOSTRACIÓN',`Mostrar el producto y explicar el beneficio: ${b}. Incluir planos detalle y reacción natural.`],['22–30 s · CTA','“Si quieres probarlo, contáctanos hoy.”']], '45 segundos':[['0–4 s · GANCHO',`“Te cuento por qué estoy hablando de ${p}.”`],['4–12 s · CONTEXTO',`Presentar una situación cotidiana relevante para ${a||'el público objetivo'}.`],['12–30 s · DEMOSTRACIÓN',`Enseñar el producto en uso y explicar: ${b}.`],['30–39 s · EXPERIENCIA','Compartir una impresión auténtica, sin afirmar resultados no comprobados.'],['39–45 s · CTA','“Conoce más y decide si es para ti. Escríbenos.”']]};put('ugcOutput',`GUION UGC · ${p.toUpperCase()}\nDuración: ${d} · Tono: ${tone}\n\n${scripts[d].map(x=>x[0]+'\n'+x[1]).join('\n\n')}\n\nDIRECCIÓN VISUAL:\nFormato vertical 9:16. Presentador mirando a cámara, luz natural, encuadres cercanos, demostración real del producto, subtítulos grandes y cortes ágiles. Mantener el producto y la identidad visual consistentes.\n\nNOTA: Sustituir cualquier afirmación genérica por información verificable del producto.`);toast('Guion UGC creado.')};
+let storyboardText='';
+$('buildStory').onclick=()=>{const idea=val('storyIdea');if(!idea)return toast('Escribe la historia primero.');const n=Number(val('sceneCount'));const parts=idea.split(/(?<=[.!?])\s+|,\s+(?=(?:después|luego|mientras|finalmente|al final|entonces))/i).filter(x=>x.trim());const scenes=Array.from({length:n},(_,i)=>{const start=Math.floor(i*parts.length/n),end=Math.max(start+1,Math.floor((i+1)*parts.length/n));const bit=parts.slice(start,end).join(' ').trim()||idea;return {title:`ESCENA ${String(i+1).padStart(2,'0')}`,desc:bit,shot:['Plano general de establecimiento','Plano medio de acción','Primer plano emocional','Plano detalle de elemento clave'][i%4],move:['Travelling suave','Cámara fija','Acercamiento lento','Seguimiento lateral'][i%4]}});storyboardText=`STORYBOARD · ${val('storyStyle')}\n\n${scenes.map(s=>`${s.title}\nAcción: ${s.desc}\nPlano sugerido: ${s.shot}\nCámara: ${s.move}\nContinuidad: conservar diseño de personajes, vestuario, utilería, iluminación y geografía de la escena.`).join('\n\n')}`;$('storyOutput').innerHTML=scenes.map(s=>`<article class="scene"><b>${s.title}</b><p>${escapeHtml(s.desc)}</p><small>${s.shot} · ${s.move}</small></article>`).join('');$('storyActions').hidden=false;toast('Storyboard organizado. Revisa la continuidad de las escenas.')};
+$('copyStory').onclick=()=>copyText(storyboardText);$('saveStory').onclick=()=>saveProject('Storyboard',storyboardText,'storyboard');
+$('exportBtn').onclick=()=>{const data=JSON.stringify({app:'Gangry Fusion AI',version:'0.5',projects:getProjects()},null,2);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download='gangry-fusion-ai-projects.json';a.click();URL.revokeObjectURL(a.href);toast('Archivo de proyectos exportado.')};
+if(location.protocol!=='file:' && 'serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+renderProjects();
+
+</script>
+</body>
+</html>
