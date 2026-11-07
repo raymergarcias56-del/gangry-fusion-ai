@@ -107,6 +107,20 @@
 
       <section class="view" id="video">
         <div class="intro"><span class="eyebrow">VÍDEO · PROMPT BUILDER</span><h2>Video Studio</h2><p>Prepara prompts para flujos de texto a vídeo o imagen a vídeo.</p></div>
+       
+<div class="panel" style="margin-bottom:18px">
+  <label for="videoEngine">Motor de generación de vídeo</label>
+  <select id="videoEngine">
+    <option value="wan2gp" selected>Wan2GP — Motor principal (local)</option>
+    <option value="comfyui" disabled>ComfyUI — Próximamente</option>
+    <option value="external" disabled>Otros motores compatibles — Próximamente</option>
+  </select>
+  <small style="display:block;color:#98a4b9;font-size:11px;margin-top:8px">
+    Wan2GP se conectará al equipo del usuario que lo tenga instalado y configurado.
+    Los motores no integrados todavía no están disponibles.
+  </small>
+</div>
+
         <div class="workspace">
           <div class="panel">
             <label>Describe la escena y la acción</label><textarea id="videoSubject" rows="4" placeholder="Ej. Una mujer abre una caja de chocolate, sonríe y prueba una pieza..."></textarea>
