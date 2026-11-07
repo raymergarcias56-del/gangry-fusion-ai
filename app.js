@@ -25,3 +25,74 @@ $('copyStory').onclick=()=>copyText(storyboardText);$('saveStory').onclick=()=>s
 $('exportBtn').onclick=()=>{const data=JSON.stringify({app:'Gangry Fusion AI',version:'0.1',projects:getProjects()},null,2);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download='gangry-fusion-ai-projects.json';a.click();URL.revokeObjectURL(a.href);toast('Archivo de proyectos exportado.')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 renderProjects();
+
+// GANGRY FUSION AI — CONEXIÓN REAL CON CLOUDFLARE FLUX
+const GF_WORKER_URL = 'https://damp-poetry-525fgangry-fusion-engine.raymergarcias56.workers.dev/';
+
+const gfApiInput = $('imageApiUrl');
+if (gfApiInput && !gfApiInput.value) {
+  gfApiInput.value = localStorage.getItem('gf_worker_url') || GF_WORKER_URL;
+}
+
+$('generateImage').onclick = async () => {
+  const prompt = $('imageOutput').textContent.trim();
+  const status = $('imageStatus');
+  const button = $('generateImage');
+
+  if (!prompt || prompt === 'Tu prompt aparecerá aquí.') {
+    return toast('Primero pulsa Construir prompt.');
+  }
+
+  const url = gfApiInput.value.trim() || GF_WORKER_URL;
+
+  try {
+    new URL(url);
+  } catch {
+    return toast('La dirección del motor no es válida.');
+  }
+
+  localStorage.setItem('gf_worker_url', url);
+  button.disabled = true;
+  status.textContent = 'Generando imagen con FLUX.1 Schnell...';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || `Error HTTP ${response.status}`);
+    }
+
+    if (!data.image) {
+      throw new Error('El motor no devolvió ninguna imagen.');
+    }
+
+    $('generatedImage').src = `data:image/png;base64,${data.image}`;
+    $('generatedImageWrap').hidden = false;
+
+    status.textContent = 'Imagen generada correctamente con FLUX.1 Schnell.';
+    toast('¡Imagen creada correctamente!');
+
+  } catch (error) {
+    status.textContent = 'Error: ' + error.message;
+    toast('No se pudo generar la imagen.');
+  } finally {
+    button.disabled = false;
+  }
+};
+
+$('downloadGeneratedImage').onclick = () => {
+  const image = $('generatedImage');
+
+  if (!image.src) return toast('No hay imagen para descargar.');
+
+  const link = document.createElement('a');
+  link.href = image.src;
+  link.download = 'gangry-fusion-ai-image.png';
+  link.click();
+};
